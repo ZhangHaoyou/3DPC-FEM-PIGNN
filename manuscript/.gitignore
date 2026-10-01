@@ -1,0 +1,19 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.loc
+*.soc
+*.spl
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# macOS
+.DS_Store
