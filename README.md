@@ -1,8 +1,9 @@
 # Graph-Based Deep Learning for the Compressive Behavior of 3D-Printed Concrete Columns
 
 Reference implementation for the study *Graph-Based Deep Learning for Compressive Behavior of
-3D-Printed Concrete Columns across Layers*, accepted for publication in
-**Advances in Structural Engineering** (manuscript ASE-26-0614.R1).
+3D-Printed Concrete Columns across Layers*, published in **Advances in Structural Engineering**
+(2026), [doi:10.1177/13694332261491070](https://doi.org/10.1177/13694332261491070). The accepted
+manuscript, with its LaTeX source, is available in [`manuscript/`](manuscript/).
 
 The repository provides two parallel routes to the compressive response of extrusion-based
 3D-printed concrete (3DPC): an open-source finite element (FEM) formulation with node-to-surface
@@ -53,7 +54,14 @@ column interior, while tangential coordinates govern the interlayer response.
 ## Repository structure
 
 ```
-pc/
+assets/                         Images used in this README
+manuscript/                     Accepted manuscript (see Manuscript below)
+├── manuscript.tex              LaTeX source
+├── manuscript.pdf              Compiled accepted manuscript
+├── references.bib              Bibliography
+├── SageH.bst                   SAGE Harvard bibliography style
+└── figures/                    Figures in PDF format
+pc/                             Source code
 ├── main.py                     Entry points for the FEM, PINN, GNN and explainability runs
 ├── configs/                    YAML cases: material, damage, geometry, mesh and contact parameters
 ├── data/                       Experimental and reference load-displacement curves
@@ -134,6 +142,24 @@ Pijaudier-Cabot and the mu-model). All quantities use mm, N, MPa, ton and second
 simulation, and the load-displacement response produced by the present FEM. These are the series
 compared in the paper.
 
+## Manuscript
+
+`manuscript/` contains the authors' accepted manuscript: the LaTeX source, bibliography, figures
+and the compiled `manuscript.pdf`. Its content matches the published article; layout and
+typesetting differ from the journal version. The version of record is available at
+[doi:10.1177/13694332261491070](https://doi.org/10.1177/13694332261491070).
+
+To rebuild the PDF with a standard TeX distribution (TeX Live or MiKTeX, which include the
+`elsarticle` class):
+
+```bash
+cd manuscript
+pdflatex manuscript
+bibtex manuscript
+pdflatex manuscript
+pdflatex manuscript
+```
+
 ## Citation
 
 Please cite the paper if you use this code.
@@ -144,13 +170,15 @@ Please cite the paper if you use this code.
   author  = {Zhang, Haoyou and Wan, Baolin},
   journal = {Advances in Structural Engineering},
   year    = {2026},
-  note    = {In press}
+  doi     = {10.1177/13694332261491070}
 }
 ```
 
 ## License
 
-Released under the MIT License; see [LICENSE](LICENSE).
+The source code is released under the MIT License; see [LICENSE](LICENSE). The accepted manuscript
+in `manuscript/` is not covered by the MIT License; please cite the published article when
+referring to it.
 
 ## Contact
 
